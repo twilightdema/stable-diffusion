@@ -1,0 +1,18 @@
+conda activate ldm
+
+TEXT TO IMAGE
+
+python scripts/txt2img.py --ckpt models/ldm/stable-diffusion-v1/model.ckpt --prompt "Kitten playing basketball in Zurich lake" --H 512 --W 512 --seed 27 --n_iter 2 --ddim_steps 50
+
+IMAGE&TEXT TO IMAGE
+
+python scripts/img2img.py --ckpt models/ldm/stable-diffusion-v1/model.ckpt --prompt "realistic photo" --init-img inputs/input.jpg --seed 27 --n_iter 2 --ddim_steps 50
+
+IMAGE&TEXT TO IMAGE (F222) - To realistic photos
+
+python scripts/img2img.py --ckpt models/ldm/stable-diffusion-v1/f222.ckpt --prompt "((Nikon Z9)) beautiful woman, white skin, slim face, prominent nose, super model, double eyelid" --init-img inputs/input.png --seed 1 --n_iter 2 --ddim_steps 50
+good seeds: 1, 6
+
+IMAGE&TEXT TO IMAGE (AnythingV3) - To anime style
+
+python scripts/img2img.py --ckpt models/ldm/stable-diffusion-v1/Anything-V3.0.ckpt --prompt "anime waifu" --init-img inputs/input.jpg --seed 27 --n_iter 2 --ddim_steps 50
